@@ -2,9 +2,11 @@ const axios = require('axios');
 
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, query) => {
   const requestOptions = {
-    headers: { accept: 'application/json' },
+    headers: { accept: 'application/json',
+	params:{
+	term: query  },
   };
 
   axios
